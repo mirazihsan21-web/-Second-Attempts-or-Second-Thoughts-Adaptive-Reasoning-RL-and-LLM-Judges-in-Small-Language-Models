@@ -1,0 +1,5 @@
+{
+ "utc": "2026-10-12T08:49:03+00:00",
+ "scale_rewards": "group",
+ "reason": "CoT collapse after step \u2248130 (S5 greedy eval: R1 MATH 74.2 at step 60 \u2192 50.4 at step 200)"
+}

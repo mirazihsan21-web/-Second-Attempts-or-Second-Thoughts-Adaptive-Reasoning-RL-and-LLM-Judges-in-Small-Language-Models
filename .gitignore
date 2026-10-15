@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+release_assets/
+paper_tables_out/
+paper_figures_out/
+*.zip
+*.zip.part*

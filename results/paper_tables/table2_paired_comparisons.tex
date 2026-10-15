@@ -1,0 +1,42 @@
+\begin{table}
+\caption{Paired accuracy differences (GRPO-ours minus comparator), bootstrap 95\% CI, exact McNemar with Holm correction.}
+\label{tab:paired}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+comparison & bench & n & delta & ci_low & ci_high & a_only & b_only & p_mcnemar & p_holm \\
+\midrule
+ours − Base (Qwen2.5-Math-1.5B-Inst) [single] & gsm8k & 1319 & 0.006800 & -0.008300 & 0.022000 & 58 & 49 & 0.439400 & 1.000000 \\
+ours − Base (Qwen2.5-Math-1.5B-Inst) [single] & math500 & 500 & 0.010000 & -0.020000 & 0.038000 & 28 & 23 & 0.575800 & 1.000000 \\
+ours − SFT (v2) [single] & gsm8k & 1319 & 0.031100 & 0.015200 & 0.047800 & 80 & 39 & 0.000200 & 0.005400 \\
+ours − SFT (v2) [single] & math500 & 500 & 0.046000 & 0.014000 & 0.078000 & 45 & 22 & 0.006700 & 0.134800 \\
+ours − v1 GRPO (original) [single] & gsm8k & 1319 & 0.014400 & -0.002300 & 0.031800 & 74 & 55 & 0.112700 & 1.000000 \\
+ours − v1 GRPO (original) [single] & math500 & 500 & 0.006000 & -0.024000 & 0.036000 & 32 & 29 & 0.798200 & 1.000000 \\
+ours − GRPO std. length (R3) [single] & gsm8k & 1319 & 0.010600 & -0.003800 & 0.024300 & 51 & 37 & 0.165400 & 1.000000 \\
+ours − GRPO std. length (R3) [single] & math500 & 500 & 0.012000 & -0.014000 & 0.036000 & 24 & 18 & 0.440800 & 1.000000 \\
+ours − GRPO judge reward (R2) [single] & gsm8k & 1319 & 0.010600 & -0.002300 & 0.023500 & 44 & 30 & 0.130200 & 1.000000 \\
+ours − GRPO judge reward (R2) [single] & math500 & 500 & 0.002000 & -0.022000 & 0.026000 & 19 & 18 & 1.000000 & 1.000000 \\
+ours − DPO (v2) [single] & gsm8k & 1319 & 0.025800 & 0.011400 & 0.040900 & 71 & 37 & 0.001400 & 0.033200 \\
+ours − DPO (v2) [single] & math500 & 500 & 0.006000 & -0.022000 & 0.034000 & 28 & 25 & 0.783800 & 1.000000 \\
+ours − GRPO ours (R1) [forced_think] & gsm8k & 1319 & 0.029600 & 0.009900 & 0.048500 & 103 & 64 & 0.003200 & 0.066300 \\
+ours − GRPO ours (R1) [forced_think] & math500 & 500 & 0.102000 & 0.064000 & 0.138000 & 73 & 22 & 0.000000 & 0.000000 \\
+ours − GRPO ours (R1) [forced_short] & gsm8k & 1319 & 0.002300 & -0.003000 & 0.008300 & 9 & 6 & 0.607200 & 1.000000 \\
+ours − GRPO ours (R1) [forced_short] & math500 & 500 & 0.010000 & -0.004000 & 0.024000 & 9 & 4 & 0.266800 & 1.000000 \\
+ours − R1-Distill-1.5B (reference) [single] & gsm8k & 1319 & 0.127400 & 0.103100 & 0.151600 & 226 & 58 & 0.000000 & 0.000000 \\
+ours − R1-Distill-1.5B (reference) [single] & math500 & 500 & 0.090000 & 0.046000 & 0.134000 & 84 & 39 & 0.000100 & 0.001600 \\
+ours − GRPO ours (R1, seed 2) [single] & gsm8k & 1319 & 0.009100 & -0.003800 & 0.021200 & 44 & 32 & 0.206700 & 1.000000 \\
+ours − GRPO ours (R1, seed 2) [single] & math500 & 500 & 0.002000 & -0.024000 & 0.026000 & 22 & 21 & 1.000000 & 1.000000 \\
+ours − GRPO ours, balanced exploration (R1b) [single] & gsm8k & 1319 & 0.007600 & -0.006100 & 0.020500 & 43 & 33 & 0.301900 & 1.000000 \\
+ours − GRPO ours, balanced exploration (R1b) [single] & math500 & 500 & 0.026000 & 0.002000 & 0.048000 & 23 & 10 & 0.035100 & 0.631500 \\
+ours − GRPO ours (R1) at step 60 [single] & gsm8k & 1319 & 0.007600 & -0.006100 & 0.021200 & 50 & 40 & 0.342800 & 1.000000 \\
+ours − GRPO ours (R1) at step 60 [single] & math500 & 500 & 0.010000 & -0.016000 & 0.036000 & 24 & 19 & 0.542400 & 1.000000 \\
+ours − GRPO ours (R1), group-std advantages [single] & gsm8k & 1319 & 0.196400 & 0.171300 & 0.221400 & 301 & 42 & 0.000000 & 0.000000 \\
+ours − GRPO ours (R1), group-std advantages [single] & math500 & 500 & 0.248000 & 0.206000 & 0.292000 & 138 & 14 & 0.000000 & 0.000000 \\
+ours − GRPO std. length (R3), group-std advantages [single] & gsm8k & 1319 & 0.322200 & 0.294200 & 0.350300 & 455 & 30 & 0.000000 & 0.000000 \\
+ours − GRPO std. length (R3), group-std advantages [single] & math500 & 500 & 0.366000 & 0.320000 & 0.410000 & 192 & 9 & 0.000000 & 0.000000 \\
+ours − Thinkless-1.5B (Fang et al.) [single] & gsm8k & 1319 & 0.033400 & 0.012100 & 0.053800 & 120 & 76 & 0.002100 & 0.047200 \\
+ours − Thinkless-1.5B (Fang et al.) [single] & math500 & 500 & -0.040000 & -0.074000 & -0.004000 & 31 & 51 & 0.035200 & 0.631500 \\
+ours − AdaptThink-1.5B (Zhang et al.) [single] & gsm8k & 1319 & 0.027300 & 0.006800 & 0.048500 & 114 & 78 & 0.011300 & 0.215600 \\
+ours − AdaptThink-1.5B (Zhang et al.) [single] & math500 & 500 & -0.058000 & -0.094000 & -0.022000 & 29 & 58 & 0.002500 & 0.054500 \\
+\bottomrule
+\end{tabular}
+\end{table}

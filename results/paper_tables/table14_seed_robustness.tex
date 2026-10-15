@@ -1,0 +1,13 @@
+\begin{table}
+\caption{Seed robustness of GRPO (R1): greedy accuracy per training seed, mean ± sd over seeds, seed 1 vs each other seed (paired exact McNemar p), and the seed-averaged accuracy minus SFT and minus the base model (paired bootstrap 95\% CI).}
+\label{tab:seeds}
+\begin{tabular}{lrrrrrrrrrrrrrrr}
+\toprule
+bench & n & n_seeds & seed1 & seed2 & seed3 & mean & sd & seed1_vs_seed2_p & seed1_vs_seed3_p & mean_minus_sft & mean_minus_sft_ci_low & mean_minus_sft_ci_high & mean_minus_base & mean_minus_base_ci_low & mean_minus_base_ci_high \\
+\midrule
+gsm8k & 1319 & 3 & 0.862800 & 0.853700 & 0.853700 & 0.856700 & 0.005300 & 0.206700 & 0.118900 & 0.025000 & 0.011400 & 0.038700 & 0.000800 & -0.012400 & 0.013600 \\
+math500 & 500 & 3 & 0.752000 & 0.750000 & 0.742000 & 0.748000 & 0.005300 & 1.000000 & 0.499600 & 0.042000 & 0.015300 & 0.069300 & 0.006000 & -0.020000 & 0.029300 \\
+aime2026 & 30 & 3 & 0.133300 & 0.133300 & 0.100000 & 0.122200 & 0.019200 & 1.000000 & 1.000000 & 0.055600 & 0.000000 & 0.144400 & 0.022200 & -0.077800 & 0.122200 \\
+\bottomrule
+\end{tabular}
+\end{table}

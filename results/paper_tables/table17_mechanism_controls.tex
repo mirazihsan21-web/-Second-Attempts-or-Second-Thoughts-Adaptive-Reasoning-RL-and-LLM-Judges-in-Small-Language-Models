@@ -1,0 +1,21 @@
+\begin{table}
+\caption{Group-std CoT collapse: rollout accuracy, completion length, entropy and gradient norm at GRPO steps 61--100 (mid) and 161--200 (late), share of all-correct groups, and greedy accuracy. Collapse (pre-registered): late length below 0.6 times mid length.}
+\label{tab:mechanism}
+\begin{tabular}{llrrrrrrrrrrrr}
+\toprule
+model & scale_rewards & bonus_scale & acc_mid & acc_late & length_mid & length_late & entropy_late & grad_norm_late & all_correct_groups_mid & length_ratio_late_mid & collapsed & greedy_gsm8k & greedy_math500 \\
+\midrule
+GRPO ours (R1), group-std advantages & group & 1.000000 & 0.861000 & 0.576000 & 449.365000 & 102.695000 & 0.250000 & 0.454000 & NaN & 0.229000 & True & 0.666000 & 0.504000 \\
+GRPO std. length (R3), group-std advantages & group & 1.000000 & 0.866000 & 0.662000 & 454.399000 & 134.214000 & 0.196000 & 0.306000 & NaN & 0.295000 & True & 0.541000 & 0.386000 \\
+Control C1: group-std, no brevity bonus & group & 1.000000 & 0.853000 & 0.880000 & 489.117000 & 459.073000 & 0.073000 & 0.026000 & 0.716000 & 0.939000 & False & 0.848000 & 0.752000 \\
+Control C3: group-std, R1 bonus ×0.1 & group & 0.100000 & 0.858000 & 0.664000 & 460.418000 & 139.624000 & 0.219000 & 0.326000 & 0.709000 & 0.303000 & True & 0.601000 & 0.464000 \\
+Control C2: R1 bonus, no std scaling (Dr. GRPO-style) & none & 1.000000 & 0.855000 & 0.877000 & 486.070000 & 454.055000 & 0.074000 & 0.017000 & 0.719000 & 0.934000 & False & 0.848000 & 0.742000 \\
+GRPO ours (R1) & batch & 1.000000 & 0.856000 & 0.884000 & 475.471000 & 441.659000 & 0.071000 & 0.044000 & NaN & 0.929000 & False & 0.863000 & 0.752000 \\
+GRPO std. length (R3) & batch & 1.000000 & 0.857000 & 0.880000 & 487.263000 & 457.082000 & 0.076000 & 0.045000 & NaN & 0.938000 & False & 0.852000 & 0.740000 \\
+GRPO ours (R1, seed 2) & batch & 1.000000 & 0.854000 & 0.850000 & 502.460000 & 463.023000 & 0.086000 & 0.044000 & 0.700000 & 0.922000 & False & 0.854000 & 0.750000 \\
+GRPO ours (R1, seed 3) & batch & 1.000000 & 0.863000 & 0.854000 & 494.056000 & 494.177000 & 0.077000 & 0.036000 & 0.716000 & 1.000000 & False & 0.854000 & 0.742000 \\
+GRPO ours, balanced exploration (R1b) & group & 1.000000 & 0.793000 & 0.813000 & 595.500000 & 462.007000 & 0.208000 & 0.107000 & NaN & 0.776000 & False & 0.855000 & 0.726000 \\
+GRPO judge reward (R2) & batch & 1.000000 & 0.853000 & 0.880000 & 483.822000 & 442.893000 & 0.076000 & 0.033000 & 0.697000 & 0.915000 & False & 0.852000 & 0.750000 \\
+\bottomrule
+\end{tabular}
+\end{table}

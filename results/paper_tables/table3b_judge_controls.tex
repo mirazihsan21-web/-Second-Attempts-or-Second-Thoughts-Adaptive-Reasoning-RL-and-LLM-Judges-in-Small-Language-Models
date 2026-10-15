@@ -1,0 +1,22 @@
+\begin{table}
+\caption{Judge controls on identical gold-labelled outputs: the v1 1.5B judge, the same judge without output truncation, and a 7B instruct judge, each scored with the v1 parser (first number after the reasoning) and the corrected parser (the judge's actual score).}
+\label{tab:judge_controls}
+\begin{tabular}{lllrrrrrrrrrrrrrr}
+\toprule
+judge & parser & subset & n & TP & FP & TN & FN & precision & recall & FPR & FPR_ci_low & FPR_ci_high & accuracy & kappa & no_valid_score & judge_truncated \\
+\midrule
+R1-Distill-1.5B · 512 tok (v1 judge) & v1 parser & all & 1500 & 731 & 684 & 66 & 19 & 0.517000 & 0.975000 & 0.912000 & 0.890000 & 0.930000 & 0.531000 & 0.063000 & 0.001000 & 0.341000 \\
+R1-Distill-1.5B · 512 tok (v1 judge) & v1 parser & no final answer & 22 & 0 & 20 & 2 & 0 & 0.000000 & 0.000000 & 0.909000 & 0.722000 & 0.975000 & 0.091000 & 0.000000 & 0.045000 & 0.545000 \\
+R1-Distill-1.5B · 512 tok (v1 judge) & corrected parser & all & 1500 & 440 & 114 & 636 & 310 & 0.794000 & 0.587000 & 0.152000 & 0.128000 & 0.179000 & 0.717000 & 0.435000 & 0.373000 & 0.341000 \\
+R1-Distill-1.5B · 512 tok (v1 judge) & corrected parser & no final answer & 22 & 0 & 3 & 19 & 0 & 0.000000 & 0.000000 & 0.136000 & 0.047000 & 0.333000 & 0.864000 & 0.000000 & 0.364000 & 0.545000 \\
+R1-Distill-1.5B · 2048 tok (no cut-off) & v1 parser & all & 1500 & 732 & 689 & 61 & 18 & 0.515000 & 0.976000 & 0.919000 & 0.897000 & 0.936000 & 0.529000 & 0.057000 & 0.001000 & 0.085000 \\
+R1-Distill-1.5B · 2048 tok (no cut-off) & v1 parser & no final answer & 22 & 0 & 20 & 2 & 0 & 0.000000 & 0.000000 & 0.909000 & 0.722000 & 0.975000 & 0.091000 & 0.000000 & 0.045000 & 0.318000 \\
+R1-Distill-1.5B · 2048 tok (no cut-off) & corrected parser & all & 1500 & 441 & 115 & 635 & 309 & 0.793000 & 0.588000 & 0.153000 & 0.129000 & 0.181000 & 0.717000 & 0.435000 & 0.373000 & 0.085000 \\
+R1-Distill-1.5B · 2048 tok (no cut-off) & corrected parser & no final answer & 22 & 0 & 3 & 19 & 0 & 0.000000 & 0.000000 & 0.136000 & 0.047000 & 0.333000 & 0.864000 & 0.000000 & 0.364000 & 0.318000 \\
+Qwen2.5-7B-Instruct · 512 tok (larger) & v1 parser & all & 1500 & 714 & 214 & 536 & 36 & 0.769000 & 0.952000 & 0.285000 & 0.254000 & 0.319000 & 0.833000 & 0.667000 & 0.000000 & 0.696000 \\
+Qwen2.5-7B-Instruct · 512 tok (larger) & v1 parser & no final answer & 22 & 0 & 4 & 18 & 0 & 0.000000 & 0.000000 & 0.182000 & 0.073000 & 0.385000 & 0.818000 & 0.000000 & 0.000000 & 0.818000 \\
+Qwen2.5-7B-Instruct · 512 tok (larger) & corrected parser & all & 1500 & 714 & 214 & 536 & 36 & 0.769000 & 0.952000 & 0.285000 & 0.254000 & 0.319000 & 0.833000 & 0.667000 & 0.000000 & 0.696000 \\
+Qwen2.5-7B-Instruct · 512 tok (larger) & corrected parser & no final answer & 22 & 0 & 4 & 18 & 0 & 0.000000 & 0.000000 & 0.182000 & 0.073000 & 0.385000 & 0.818000 & 0.000000 & 0.000000 & 0.818000 \\
+\bottomrule
+\end{tabular}
+\end{table}

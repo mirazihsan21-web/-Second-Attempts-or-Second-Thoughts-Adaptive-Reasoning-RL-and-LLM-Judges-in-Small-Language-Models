@@ -1,0 +1,6 @@
+{
+ "base": "Qwen/Qwen2.5-1.5B-Instruct",
+ "steps": 714,
+ "train": 5700,
+ "eval": 300
+}

@@ -1,0 +1,5 @@
+{
+ "step": 60,
+ "metric": "policy_think_prob",
+ "window_mean": 0.013683178555220365
+}

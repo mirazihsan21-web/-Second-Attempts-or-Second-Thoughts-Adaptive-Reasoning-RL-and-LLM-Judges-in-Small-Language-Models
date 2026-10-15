@@ -1,0 +1,3 @@
+set,source,revision,rows,paired_instructions,too_long,no_boxed_answer,modes_disagree,overlaps_rl_prompts,bad_format,verifier_timeout_or_error,contaminated,kept_pairs,max_target_tokens,think_tokens_mean,think_tokens_median,math_no_box,math_gold_unparseable,prompt_too_long,overlaps_sft,pool,clean,rl,dpo,rl_by_level
+SFT,Vinnnf/Hybrid-OpenThoughts2-1M-1.5B,3b51a5200896ad15582973e98921be620f87a1b3,400000.0,154719.0,16935.0,6980.0,204.0,49.0,9.0,9.0,1,3000.0,1500.0,1105.3313333333333,1162.0,,,,,,,,,
+RL/DPO,,,,,,,,,,,198,,,,,2.0,15.0,76.0,77.0,14956.0,14605.0,3000.0,600.0,"{'2': 480, '3': 480, '1': 480, '4': 480, '0': 600, '5': 480}"

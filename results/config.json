@@ -1,0 +1,132 @@
+{
+ "SCALE": "full",
+ "CFG": {
+  "seed": 42,
+  "policy_base": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+  "policy_base2": "Qwen/Qwen2.5-1.5B-Instruct",
+  "m2_published": {
+   "gsm8k": 0.732,
+   "math500": 0.552
+  },
+  "fallback_base": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "judge_model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "context": 4096,
+  "vllm_enforce_eager": false,
+  "sft_source": "Vinnnf/Hybrid-OpenThoughts2-1M-1.5B",
+  "sft_source_rows": 400000,
+  "sft_pairs_target": 3000,
+  "sft_eval_frac": 0.05,
+  "sft_max_target_tokens": 1500,
+  "rl_n_prompts": 3000,
+  "rl_gsm8k_frac": 0.2,
+  "dpo_n_prompts": 600,
+  "rl_max_prompt_tokens": 512,
+  "ngram": 13,
+  "eval_max_tokens": 3584,
+  "ref_max_tokens": 8192,
+  "aime_samples": 4,
+  "aime_temperature": 0.6,
+  "aime_samples_main": 16,
+  "aime_main_models": [
+   "base",
+   "sft_v2",
+   "grpo_ours",
+   "grpo_stdlen",
+   "grpo_ours_s2",
+   "grpo_ours_s3",
+   "grpo_ours_gstd",
+   "grpo_stdlen_gstd"
+  ],
+  "difficulty_samples": 4,
+  "multi_models": [
+   "base",
+   "grpo_ours"
+  ],
+  "mpv_models": [
+   "base",
+   "sft_v2",
+   "grpo_ours",
+   "dpo_v2"
+  ],
+  "mpv_n": 100,
+  "case_n": 30,
+  "mpv_early_models": [
+   "base",
+   "sft_v2"
+  ],
+  "mpv_temperature": 0.7,
+  "mpv_max_tokens": 2048,
+  "mpv_verify_tokens": 1024,
+  "mpv_vote_k": 8,
+  "vote_k": 8,
+  "vote_models": [
+   "base",
+   "grpo_ours"
+  ],
+  "judge_large": "Qwen/Qwen2.5-7B-Instruct",
+  "judge_long_tokens": 2048,
+  "judge_v1_tokens": 512,
+  "judge_items_per_class": 750,
+  "grpo_smoke_steps": 15,
+  "pilot_bench": null,
+  "demo_max_new_tokens": 1536,
+  "demo_n": 6,
+  "latency_n": 10,
+  "ctx_n": 5,
+  "judge_run_steps": null,
+  "sft": {
+   "lora_r": 16,
+   "lora_alpha": 32,
+   "epochs": 2,
+   "lr": 0.0001,
+   "batch": 8,
+   "grad_accum": 2,
+   "eval_steps": 100,
+   "max_len": 4096,
+   "max_steps": -1
+  },
+  "grpo": {
+   "max_steps": 200,
+   "per_device_batch": 16,
+   "grad_accum": 4,
+   "num_generations": 8,
+   "max_prompt_length": 512,
+   "max_completion_length": 2048,
+   "lr": 1e-05,
+   "beta": 0.0,
+   "vllm_gpu_mem": 0.3,
+   "save_steps": 25,
+   "max_hours": 4.5,
+   "g2_after_step": 60,
+   "stop_on_collapse": false,
+   "scale_rewards": "batch",
+   "judge_batch": 64,
+   "judge_max_new_tokens": 16,
+   "judge_parser": "fixed"
+  },
+  "dpo": {
+   "samples": 4,
+   "beta": 0.1,
+   "lr": 1e-05,
+   "epochs": 1,
+   "batch": 4,
+   "grad_accum": 4,
+   "max_length": 2560,
+   "max_prompt_length": 512,
+   "lora_r": 16,
+   "lora_alpha": 32
+  }
+ },
+ "VERSIONS": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.18.0",
+  "trl": "1.15.0",
+  "peft": "0.21.2",
+  "vllm": "0.26.0",
+  "datasets": "5.1.0",
+  "math-verify": "0.9.0",
+  "accelerate": "1.15.0",
+  "codecarbon": "3.3.1"
+ },
+ "GPU": "NVIDIA A100-SXM4-80GB"
+}

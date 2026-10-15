@@ -1,0 +1,19 @@
+\begin{table}
+\caption{R2's judge reward (R1-Distill-1.5B, corrected parser, 16-token verdict, score $\geq$ 0.7 = correct) on every greedy GSM8K and MATH-500 answer of the base model, R1 and R2, against strict gold labels. FPR with Wilson 95\% CI; natural class balance.}
+\label{tab:judge_onpolicy}
+\begin{tabular}{llrrrrrrrrrrrrr}
+\toprule
+policy & subset & n & strict_acc & judge_accept & judge_reward_mean & reward_minus_strict & n_wrong & precision & recall & FPR & FPR_ci_low & FPR_ci_high & kappa & no_valid_score \\
+\midrule
+Base (Qwen2.5-Math-1.5B-Inst) & all & 1819 & 0.825000 & 0.596000 & 0.743000 & -0.081000 & 319 & 0.942000 & 0.681000 & 0.197000 & 0.158000 & 0.245000 & 0.320000 & 0.291000 \\
+Base (Qwen2.5-Math-1.5B-Inst) & bench=gsm8k & 1319 & 0.856000 & 0.667000 & 0.791000 & -0.065000 & 190 & 0.948000 & 0.739000 & 0.242000 & 0.187000 & 0.308000 & 0.321000 & 0.248000 \\
+Base (Qwen2.5-Math-1.5B-Inst) & bench=math500 & 500 & 0.742000 & 0.410000 & 0.617000 & -0.125000 & 129 & 0.917000 & 0.507000 & 0.132000 & 0.084000 & 0.201000 & 0.264000 & 0.406000 \\
+GRPO ours (R1) & all & 1819 & 0.832000 & 0.516000 & 0.695000 & -0.138000 & 305 & 0.950000 & 0.589000 & 0.154000 & 0.118000 & 0.199000 & 0.248000 & 0.356000 \\
+GRPO ours (R1) & bench=gsm8k & 1319 & 0.863000 & 0.566000 & 0.733000 & -0.130000 & 181 & 0.960000 & 0.630000 & 0.166000 & 0.119000 & 0.227000 & 0.243000 & 0.332000 \\
+GRPO ours (R1) & bench=math500 & 500 & 0.752000 & 0.382000 & 0.594000 & -0.158000 & 124 & 0.911000 & 0.463000 & 0.137000 & 0.087000 & 0.209000 & 0.217000 & 0.418000 \\
+GRPO judge reward (R2) & all & 1819 & 0.824000 & 0.506000 & 0.690000 & -0.134000 & 320 & 0.944000 & 0.580000 & 0.162000 & 0.126000 & 0.207000 & 0.244000 & 0.367000 \\
+GRPO judge reward (R2) & bench=gsm8k & 1319 & 0.852000 & 0.555000 & 0.727000 & -0.125000 & 195 & 0.951000 & 0.619000 & 0.185000 & 0.136000 & 0.245000 & 0.237000 & 0.344000 \\
+GRPO judge reward (R2) & bench=math500 & 500 & 0.750000 & 0.378000 & 0.592000 & -0.158000 & 125 & 0.915000 & 0.461000 & 0.128000 & 0.080000 & 0.198000 & 0.223000 & 0.426000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,91 @@
+\begin{table}
+\caption{Adaptive test-time compute. Accuracy (Wilson 95\% CI), mean generated tokens and model calls per problem, computed exactly from the same saved attempts.}
+\label{tab:adaptive_mpv}
+\begin{tabular}{lllrrrrrrrrrrr}
+\toprule
+model & bench & policy & n & acc & ci_low & ci_high & mean_tokens & mean_calls & delta_vs_full_MPV & delta_ci_low & delta_ci_high & p_vs_full_MPV & token_saving_vs_full_MPV \\
+\midrule
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & single pass & 30 & 0.100000 & 0.034600 & 0.256200 & 893.133300 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & majority@4 & 30 & 0.100000 & 0.034600 & 0.256200 & 3729.400000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & majority@8 & 30 & 0.100000 & 0.034600 & 0.256200 & 7485.533300 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & MPV (full) & 30 & 0.066700 & 0.018500 & 0.213200 & 7615.266700 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & early-stop vote & 30 & 0.100000 & 0.034600 & 0.256200 & 3383.000000 & 3.666700 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & aime2026 & adaptive MPV (early-stop) & 30 & 0.100000 & 0.034600 & 0.256200 & 6470.500000 & 7.833300 & 0.033300 & 0.000000 & 0.100000 & 1.000000 & 0.150300 \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & single pass & 100 & 0.840000 & 0.755800 & 0.899000 & 339.480000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & majority@4 & 100 & 0.890000 & 0.813700 & 0.937500 & 1330.600000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & majority@8 & 100 & 0.880000 & 0.801900 & 0.930000 & 2643.490000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & MPV (full) & 100 & 0.850000 & 0.767200 & 0.906900 & 2895.160000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & early-stop vote & 100 & 0.890000 & 0.813700 & 0.937500 & 774.210000 & 2.260000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & gsm8k & adaptive MPV (early-stop) & 100 & 0.880000 & 0.801900 & 0.930000 & 1029.960000 & 2.910000 & 0.030000 & -0.020000 & 0.080000 & 0.453100 & 0.644200 \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & single pass & 100 & 0.740000 & 0.646300 & 0.816000 & 609.700000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & majority@4 & 100 & 0.790000 & 0.700200 & 0.858300 & 2401.070000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & majority@8 & 100 & 0.800000 & 0.711200 & 0.866600 & 4815.260000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & MPV (full) & 100 & 0.810000 & 0.722200 & 0.874900 & 5142.900000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & early-stop vote & 100 & 0.790000 & 0.700200 & 0.858300 & 1651.590000 & 2.620000 & NaN & NaN & NaN & NaN & NaN \\
+Base (Qwen2.5-Math-1.5B-Inst) & math500 & adaptive MPV (early-stop) & 100 & 0.820000 & 0.733300 & 0.883000 & 2680.450000 & 4.170000 & 0.010000 & 0.000000 & 0.030000 & 1.000000 & 0.478800 \\
+DPO (v2) & aime2026 & single pass & 30 & 0.066700 & 0.018500 & 0.213200 & 1691.133300 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & aime2026 & majority@4 & 30 & 0.100000 & 0.034600 & 0.256200 & 5671.233300 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & aime2026 & majority@8 & 30 & 0.100000 & 0.034600 & 0.256200 & 11905.133300 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & aime2026 & MPV (full) & 30 & 0.133300 & 0.053100 & 0.296800 & 9820.933300 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & aime2026 & early-stop vote & 30 & 0.100000 & 0.034600 & 0.256200 & 5304.366700 & 3.800000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & aime2026 & adaptive MPV (early-stop) & 30 & 0.133300 & 0.053100 & 0.296800 & 9173.900000 & 8.300000 & 0.000000 & -0.495900 & 0.495900 & 1.000000 & 0.065900 \\
+DPO (v2) & aime2026 & mode-routed MPV & 18 & 0.111100 & 0.031000 & 0.328000 & 1550.222200 & 1.500000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & single pass & 100 & 0.780000 & 0.689300 & 0.850000 & 455.950000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & majority@4 & 100 & 0.860000 & 0.778600 & 0.914700 & 2710.850000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & majority@8 & 100 & 0.880000 & 0.801900 & 0.930000 & 5693.940000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & MPV (full) & 100 & 0.890000 & 0.813700 & 0.937500 & 4284.180000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & early-stop vote & 100 & 0.860000 & 0.778600 & 0.914700 & 1799.490000 & 2.500000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & gsm8k & adaptive MPV (early-stop) & 100 & 0.890000 & 0.813700 & 0.937500 & 2250.440000 & 3.750000 & 0.000000 & -0.030000 & 0.030000 & 1.000000 & 0.474700 \\
+DPO (v2) & gsm8k & mode-routed MPV & 97 & 0.814400 & 0.725600 & 0.879300 & 928.649500 & 2.206200 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & single pass & 100 & 0.700000 & 0.604200 & 0.781100 & 765.490000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & majority@4 & 100 & 0.760000 & 0.667700 & 0.833100 & 4297.010000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & majority@8 & 100 & 0.800000 & 0.711200 & 0.866600 & 8794.430000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & MPV (full) & 100 & 0.760000 & 0.667700 & 0.833100 & 7188.030000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & early-stop vote & 100 & 0.760000 & 0.667700 & 0.833100 & 3329.350000 & 2.920000 & NaN & NaN & NaN & NaN & NaN \\
+DPO (v2) & math500 & adaptive MPV (early-stop) & 100 & 0.780000 & 0.689300 & 0.850000 & 4899.240000 & 5.220000 & 0.020000 & 0.000000 & 0.050000 & 0.500000 & 0.318400 \\
+DPO (v2) & math500 & mode-routed MPV & 95 & 0.747400 & 0.651600 & 0.824000 & 1131.800000 & 1.568400 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & single pass & 30 & 0.133300 & 0.053100 & 0.296800 & 830.666700 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & majority@4 & 30 & 0.100000 & 0.034600 & 0.256200 & 3569.266700 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & majority@8 & 30 & 0.100000 & 0.034600 & 0.256200 & 7306.566700 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & MPV (full) & 30 & 0.100000 & 0.034600 & 0.256200 & 7229.966700 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & early-stop vote & 30 & 0.100000 & 0.034600 & 0.256200 & 3350.866700 & 3.733300 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & aime2026 & adaptive MPV (early-stop) & 30 & 0.100000 & 0.034600 & 0.256200 & 6621.033300 & 8.066700 & 0.000000 & -0.495900 & 0.495900 & 1.000000 & 0.084200 \\
+GRPO ours (R1) & aime2026 & mode-routed MPV & 30 & 0.133300 & 0.053100 & 0.296800 & 830.666700 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & single pass & 100 & 0.860000 & 0.778600 & 0.914700 & 285.860000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & majority@4 & 100 & 0.900000 & 0.825600 & 0.944800 & 1168.630000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & majority@8 & 100 & 0.880000 & 0.801900 & 0.930000 & 2323.720000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & MPV (full) & 100 & 0.860000 & 0.778600 & 0.914700 & 2477.450000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & early-stop vote & 100 & 0.900000 & 0.825600 & 0.944800 & 690.530000 & 2.340000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & gsm8k & adaptive MPV (early-stop) & 100 & 0.880000 & 0.801900 & 0.930000 & 948.410000 & 3.190000 & 0.020000 & -0.020000 & 0.060000 & 0.625000 & 0.617200 \\
+GRPO ours (R1) & gsm8k & mode-routed MPV & 100 & 0.860000 & 0.778600 & 0.914700 & 285.860000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & single pass & 100 & 0.740000 & 0.646300 & 0.816000 & 553.900000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & majority@4 & 100 & 0.770000 & 0.678500 & 0.841600 & 2250.780000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & majority@8 & 100 & 0.780000 & 0.689300 & 0.850000 & 4555.030000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & MPV (full) & 100 & 0.740000 & 0.646300 & 0.816000 & 4812.430000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & early-stop vote & 100 & 0.770000 & 0.678500 & 0.841600 & 1539.570000 & 2.540000 & NaN & NaN & NaN & NaN & NaN \\
+GRPO ours (R1) & math500 & adaptive MPV (early-stop) & 100 & 0.760000 & 0.667700 & 0.833100 & 2472.670000 & 3.890000 & 0.020000 & 0.000000 & 0.050000 & 0.500000 & 0.486200 \\
+GRPO ours (R1) & math500 & mode-routed MPV & 100 & 0.740000 & 0.646300 & 0.816000 & 553.900000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & single pass & 30 & 0.066700 & 0.018500 & 0.213200 & 1796.133300 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & majority@4 & 30 & 0.133300 & 0.053100 & 0.296800 & 5734.866700 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & majority@8 & 30 & 0.133300 & 0.053100 & 0.296800 & 12111.833300 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & MPV (full) & 30 & 0.100000 & 0.034600 & 0.256200 & 9963.600000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & early-stop vote & 30 & 0.133300 & 0.053100 & 0.296800 & 5432.400000 & 3.800000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & aime2026 & adaptive MPV (early-stop) & 30 & 0.100000 & 0.034600 & 0.256200 & 9336.300000 & 8.300000 & 0.000000 & -0.495900 & 0.495900 & 1.000000 & 0.063000 \\
+SFT (v2) & aime2026 & mode-routed MPV & 19 & 0.105300 & 0.029400 & 0.313900 & 2864.684200 & 2.421100 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & single pass & 100 & 0.810000 & 0.722200 & 0.874900 & 475.790000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & majority@4 & 100 & 0.880000 & 0.801900 & 0.930000 & 2792.170000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & majority@8 & 100 & 0.880000 & 0.801900 & 0.930000 & 6070.720000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & MPV (full) & 100 & 0.880000 & 0.801900 & 0.930000 & 4438.370000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & early-stop vote & 100 & 0.880000 & 0.801900 & 0.930000 & 1932.680000 & 2.580000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & gsm8k & adaptive MPV (early-stop) & 100 & 0.890000 & 0.813700 & 0.937500 & 2505.340000 & 4.030000 & 0.010000 & 0.000000 & 0.030000 & 1.000000 & 0.435500 \\
+SFT (v2) & gsm8k & mode-routed MPV & 98 & 0.836700 & 0.751100 & 0.896900 & 1303.908200 & 2.928600 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & single pass & 100 & 0.670000 & 0.573100 & 0.754400 & 872.770000 & 1.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & majority@4 & 100 & 0.770000 & 0.678500 & 0.841600 & 4377.690000 & 4.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & majority@8 & 100 & 0.810000 & 0.722200 & 0.874900 & 9033.600000 & 8.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & MPV (full) & 100 & 0.750000 & 0.657000 & 0.824500 & 7255.780000 & 9.000000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & early-stop vote & 100 & 0.770000 & 0.678500 & 0.841600 & 3444.700000 & 2.960000 & NaN & NaN & NaN & NaN & NaN \\
+SFT (v2) & math500 & adaptive MPV (early-stop) & 100 & 0.760000 & 0.667700 & 0.833100 & 5091.590000 & 5.360000 & 0.010000 & 0.000000 & 0.030000 & 1.000000 & 0.298300 \\
+SFT (v2) & math500 & mode-routed MPV & 91 & 0.758200 & 0.661000 & 0.834600 & 1357.549500 & 1.791200 & NaN & NaN & NaN & NaN & NaN \\
+\bottomrule
+\end{tabular}
+\end{table}

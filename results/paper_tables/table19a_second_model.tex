@@ -1,0 +1,23 @@
+\begin{table}
+\caption{Second base model: strict accuracy (\%, Wilson 95\% CI) after each stage of the same recipe, for the math-specialised Qwen2.5-Math-1.5B-Instruct and the general Qwen2.5-1.5B-Instruct.}
+\label{tab:second_model}
+\begin{tabular}{lllll}
+\toprule
+ & bench & aime2026 & gsm8k & math500 \\
+stage & base_model &  &  &  \\
+\midrule
+\multirow[t]{2}{*}{GRPO R1 (batch std)} & Qwen2.5-1.5B-Instruct & 0.0 [0.0, 11.4] & 73.0 [70.5, 75.3] & 54.0 [49.6, 58.3] \\
+ & Qwen2.5-Math-1.5B-Instruct & 13.3 [5.3, 29.7] & 86.3 [84.3, 88.0] & 75.2 [71.2, 78.8] \\
+\cline{1-5}
+\multirow[t]{2}{*}{GRPO R1 (group std)} & Qwen2.5-1.5B-Instruct & 0.0 [0.0, 11.4] & 62.2 [59.5, 64.7] & 40.0 [35.8, 44.4] \\
+ & Qwen2.5-Math-1.5B-Instruct & 3.3 [0.6, 16.7] & 66.6 [64.1, 69.1] & 50.4 [46.0, 54.8] \\
+\cline{1-5}
+\multirow[t]{2}{*}{SFT} & Qwen2.5-1.5B-Instruct & 0.0 [0.0, 11.4] & 71.1 [68.6, 73.5] & 51.4 [47.0, 55.8] \\
+ & Qwen2.5-Math-1.5B-Instruct & 6.7 [1.8, 21.3] & 83.2 [81.1, 85.1] & 70.6 [66.5, 74.4] \\
+\cline{1-5}
+\multirow[t]{2}{*}{base} & Qwen2.5-1.5B-Instruct & 0.0 [0.0, 11.4] & 70.8 [68.3, 73.2] & 53.8 [49.4, 58.1] \\
+ & Qwen2.5-Math-1.5B-Instruct & 10.0 [3.5, 25.6] & 85.6 [83.6, 87.4] & 74.2 [70.2, 77.8] \\
+\cline{1-5}
+\bottomrule
+\end{tabular}
+\end{table}

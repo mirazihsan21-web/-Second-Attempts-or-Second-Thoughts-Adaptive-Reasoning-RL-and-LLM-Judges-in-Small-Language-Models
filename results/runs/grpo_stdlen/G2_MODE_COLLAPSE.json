@@ -1,0 +1,5 @@
+{
+ "step": 60,
+ "metric": "think_rate",
+ "window_mean": 0.015625
+}

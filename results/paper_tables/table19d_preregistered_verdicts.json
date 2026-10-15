@@ -1,0 +1,15 @@
+{
+ "a_more_accurate_mode_wins": {
+  "think_acc_steps_1_20": 0.30859375,
+  "short_acc_steps_1_20": 0.6302083333333334,
+  "think_rate_steps_61_100": 0.034765625,
+  "prediction": "think-rate < 5% over steps 61\u2013100",
+  "held": true
+ },
+ "b_group_std_collapses_batch_std_does_not": {
+  "ratio_group_std": 0.39790162183586947,
+  "ratio_batch_std": 0.891079083392922,
+  "all_correct_groups_mid_group_std": 0.34375,
+  "held": true
+ }
+}

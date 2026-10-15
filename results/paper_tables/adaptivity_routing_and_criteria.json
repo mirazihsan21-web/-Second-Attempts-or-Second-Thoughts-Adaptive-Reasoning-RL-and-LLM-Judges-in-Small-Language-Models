@@ -1,0 +1,18 @@
+{
+ "routing": {
+  "overthinking_rate": 0.0,
+  "underthinking_rate": 0.0434304562946674,
+  "routing_accuracy_vs_oracle": 0.9516217702034084,
+  "token_saving_vs_forced_think": 0.5067049128372311,
+  "acc_single": 0.8323254535459044,
+  "acc_forced_think": 0.782847718526663,
+  "acc_forced_short": 0.8279274326553051,
+  "oracle_acc": 0.8757559098405717
+ },
+ "criteria": {
+  "a_think_rate_rises_L1_to_L5": false,
+  "b_acc_ge_max(base, forced_short)_within_CI": true,
+  "c_tokens_30pct_below_forced_think_noninferior": true,
+  "d_format_ge_95_and_repetition_le_2": true
+ }
+}

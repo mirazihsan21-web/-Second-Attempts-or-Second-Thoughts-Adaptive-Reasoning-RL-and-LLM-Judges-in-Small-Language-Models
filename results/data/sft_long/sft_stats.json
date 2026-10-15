@@ -1,0 +1,14 @@
+{
+ "source": "Vinnnf/Hybrid-OpenThoughts2-1M-1.5B",
+ "revision": "3b51a5200896ad15582973e98921be620f87a1b3",
+ "rows": 400000,
+ "paired_instructions": 154719,
+ "too_long": 1483,
+ "modes_disagree": 2498,
+ "no_boxed_answer": 2446,
+ "verifier_timeout_or_error": 100,
+ "contaminated": 6,
+ "bad_format": 4,
+ "kept_pairs": 3000,
+ "think_tokens_mean": 1871.3703333333333
+}

@@ -1,0 +1,65 @@
+\begin{table}
+\caption{Strict accuracy (\%) when generation is capped at B tokens (exact for greedy decoding: the saved outputs truncated to B tokens and re-scored).}
+\label{tab:budgets}
+\begin{tabular}{llllllll}
+\toprule
+ & budget & 256 & 512 & 1024 & 2048 & 3584 & 8192 \\
+bench & model &  &  &  &  &  &  \\
+\midrule
+\multirow[t]{17}{*}{aime2026} & adaptthink & 0.0 & 0.0 & 0.0 & 3.3 & 10.0 & 16.7 \\
+ & base & 0.0 & 0.0 & 3.3 & 10.0 & 10.0 & NaN \\
+ & dpo_v2 & 0.0 & 0.0 & 3.3 & 6.7 & 6.7 & NaN \\
+ & grpo_balanced & 0.0 & 0.0 & 6.7 & 10.0 & 10.0 & NaN \\
+ & grpo_judge & 0.0 & 0.0 & 6.7 & 10.0 & 10.0 & NaN \\
+ & grpo_ours & 0.0 & 0.0 & 10.0 & 13.3 & 13.3 & NaN \\
+ & grpo_ours_gstd & 3.3 & 3.3 & 3.3 & 3.3 & 3.3 & NaN \\
+ & grpo_ours_s2 & 0.0 & 0.0 & 10.0 & 13.3 & 13.3 & NaN \\
+ & grpo_ours_s3 & 0.0 & 0.0 & 10.0 & 10.0 & 10.0 & NaN \\
+ & grpo_ours_step60 & 0.0 & 0.0 & 6.7 & 13.3 & 13.3 & NaN \\
+ & grpo_stdlen & 0.0 & 0.0 & 3.3 & 13.3 & 13.3 & NaN \\
+ & grpo_stdlen_gstd & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & NaN \\
+ & r1distill & 0.0 & 0.0 & 0.0 & 0.0 & 6.7 & 13.3 \\
+ & sft_long & 0.0 & 0.0 & 6.7 & 10.0 & 10.0 & NaN \\
+ & sft_v2 & 0.0 & 0.0 & 3.3 & 6.7 & 6.7 & NaN \\
+ & thinkless & 0.0 & 0.0 & 0.0 & 0.0 & 6.7 & 23.3 \\
+ & v1_grpo & 0.0 & 0.0 & 6.7 & 13.3 & 13.3 & NaN \\
+\cline{1-8}
+\multirow[t]{17}{*}{gsm8k} & adaptthink & 46.6 & 81.5 & 83.1 & 83.5 & 83.5 & 83.5 \\
+ & base & 32.8 & 84.5 & 85.6 & 85.6 & 85.6 & NaN \\
+ & dpo_v2 & 26.5 & 76.8 & 82.0 & 83.7 & 83.7 & NaN \\
+ & grpo_balanced & 37.5 & 84.7 & 85.5 & 85.5 & 85.5 & NaN \\
+ & grpo_judge & 35.8 & 84.6 & 85.2 & 85.2 & 85.2 & NaN \\
+ & grpo_ours & 42.1 & 85.6 & 86.3 & 86.3 & 86.3 & NaN \\
+ & grpo_ours_gstd & 66.6 & 66.6 & 66.6 & 66.6 & 66.6 & NaN \\
+ & grpo_ours_s2 & 34.6 & 84.6 & 85.4 & 85.4 & 85.4 & NaN \\
+ & grpo_ours_s3 & 40.1 & 84.8 & 85.4 & 85.4 & 85.4 & NaN \\
+ & grpo_ours_step60 & 33.4 & 84.8 & 85.5 & 85.5 & 85.5 & NaN \\
+ & grpo_stdlen & 31.9 & 84.7 & 85.2 & 85.2 & 85.2 & NaN \\
+ & grpo_stdlen_gstd & 54.1 & 54.1 & 54.1 & 54.1 & 54.1 & NaN \\
+ & r1distill & 0.0 & 0.8 & 36.3 & 69.4 & 72.9 & 73.5 \\
+ & sft_long & 21.9 & 64.9 & 75.2 & 79.0 & 79.2 & NaN \\
+ & sft_v2 & 22.7 & 71.0 & 79.8 & 83.0 & 83.2 & NaN \\
+ & thinkless & 18.5 & 35.9 & 57.5 & 79.0 & 82.1 & 82.9 \\
+ & v1_grpo & 27.6 & 83.2 & 84.8 & 84.8 & 84.8 & NaN \\
+\cline{1-8}
+\multirow[t]{17}{*}{math500} & adaptthink & 14.4 & 47.4 & 66.4 & 72.6 & 77.2 & 81.0 \\
+ & base & 9.6 & 49.4 & 72.2 & 74.2 & 74.2 & NaN \\
+ & dpo_v2 & 7.0 & 44.4 & 67.4 & 73.8 & 74.6 & NaN \\
+ & grpo_balanced & 13.2 & 52.4 & 71.0 & 72.6 & 72.6 & NaN \\
+ & grpo_judge & 11.4 & 53.6 & 73.4 & 75.0 & 75.0 & NaN \\
+ & grpo_ours & 13.2 & 52.6 & 73.6 & 75.2 & 75.2 & NaN \\
+ & grpo_ours_gstd & 49.0 & 50.4 & 50.4 & 50.4 & 50.4 & NaN \\
+ & grpo_ours_s2 & 11.0 & 52.2 & 73.0 & 75.0 & 75.0 & NaN \\
+ & grpo_ours_s3 & 12.2 & 52.4 & 72.2 & 74.2 & 74.2 & NaN \\
+ & grpo_ours_step60 & 8.8 & 49.0 & 71.0 & 74.2 & 74.2 & NaN \\
+ & grpo_stdlen & 9.0 & 50.8 & 72.0 & 74.0 & 74.0 & NaN \\
+ & grpo_stdlen_gstd & 38.0 & 38.6 & 38.6 & 38.6 & 38.6 & NaN \\
+ & r1distill & 0.0 & 0.2 & 7.2 & 39.2 & 57.0 & 66.2 \\
+ & sft_long & 5.4 & 37.2 & 58.6 & 67.0 & 68.8 & NaN \\
+ & sft_v2 & 7.0 & 42.0 & 62.6 & 70.0 & 70.6 & NaN \\
+ & thinkless & 4.0 & 14.6 & 18.2 & 46.0 & 68.4 & 79.2 \\
+ & v1_grpo & 8.2 & 47.0 & 72.4 & 74.4 & 74.6 & NaN \\
+\cline{1-8}
+\bottomrule
+\end{tabular}
+\end{table}

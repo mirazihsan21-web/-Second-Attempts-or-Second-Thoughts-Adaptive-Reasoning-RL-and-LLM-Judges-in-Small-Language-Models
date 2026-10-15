@@ -1,0 +1,19 @@
+{
+ "math_no_box": 2,
+ "math_gold_unparseable": 15,
+ "prompt_too_long": 76,
+ "overlaps_sft": 77,
+ "contaminated": 198,
+ "pool": 14956,
+ "clean": 14605,
+ "rl": 3000,
+ "dpo": 600,
+ "rl_by_level": {
+  "2": 480,
+  "3": 480,
+  "1": 480,
+  "4": 480,
+  "0": 600,
+  "5": 480
+ }
+}

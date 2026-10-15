@@ -1,0 +1,22 @@
+\begin{table}
+\caption{Second base model: paired differences on the same problems (bootstrap 95\% CI, exact McNemar, Holm over this table).}
+\label{tab:second_model_paired}
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+comparison & bench & n & a_acc & b_acc & delta & ci_low & ci_high & a_only & b_only & p_mcnemar & p_holm \\
+\midrule
+SFT − base & gsm8k & 1319 & 0.711100 & 0.708100 & 0.003000 & -0.020500 & 0.027300 & 142 & 138 & 0.857800 & 1.000000 \\
+SFT − base & math500 & 500 & 0.514000 & 0.538000 & -0.024000 & -0.064000 & 0.016000 & 46 & 58 & 0.280700 & 1.000000 \\
+GRPO R1 − SFT & gsm8k & 1319 & 0.730100 & 0.711100 & 0.019000 & -0.000800 & 0.037900 & 101 & 76 & 0.070900 & 0.496600 \\
+GRPO R1 − SFT & math500 & 500 & 0.540000 & 0.514000 & 0.026000 & -0.008000 & 0.062000 & 45 & 32 & 0.171100 & 0.855300 \\
+GRPO R1 − base & gsm8k & 1319 & 0.730100 & 0.708100 & 0.022000 & -0.001500 & 0.044700 & 141 & 112 & 0.078100 & 0.496600 \\
+GRPO R1 − base & math500 & 500 & 0.540000 & 0.538000 & 0.002000 & -0.036000 & 0.040000 & 49 & 48 & 1.000000 & 1.000000 \\
+batch std − group std (R1's recipe) & gsm8k & 1319 & 0.730100 & 0.621700 & 0.108400 & 0.081900 & 0.137200 & 247 & 104 & 0.000000 & 0.000000 \\
+batch std − group std (R1's recipe) & math500 & 500 & 0.540000 & 0.400000 & 0.140000 & 0.096000 & 0.184000 & 107 & 37 & 0.000000 & 0.000000 \\
+SFT: forced think − forced short & gsm8k & 1319 & 0.633100 & 0.727100 & -0.094000 & -0.120500 & -0.066000 & 100 & 224 & 0.000000 & 0.000000 \\
+SFT: forced think − forced short & math500 & 500 & 0.302000 & 0.524000 & -0.222000 & -0.264000 & -0.180000 & 21 & 132 & 0.000000 & 0.000000 \\
+GRPO R1: forced think − forced short & gsm8k & 1319 & 0.724800 & 0.733900 & -0.009100 & -0.031800 & 0.013600 & 113 & 125 & 0.475900 & 1.000000 \\
+GRPO R1: forced think − forced short & math500 & 500 & 0.426000 & 0.546000 & -0.120000 & -0.164000 & -0.074000 & 37 & 97 & 0.000000 & 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{table}

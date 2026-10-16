@@ -7,15 +7,28 @@ For every LoRA model it writes <name>.zip (adapter_config.json, adapter_model.sa
 adapter applies directly to its base model (the GRPO adapters continue the SFT adapter). The DPO model was saved merged
 (about 3 GB), above GitHub's 2 GB limit per release file, so it is zipped and split into parts; join them with
     cat dpo_v2_merged.zip.part* > dpo_v2_merged.zip        (Windows: copy /b dpo_v2_merged.zip.part1+dpo_v2_merged.zip.part2 dpo_v2_merged.zip)
-SHA256SUMS.txt lists a checksum for every file written.
+SHA256SUMS.txt lists a checksum for every file written. Add --no-dpo to skip the DPO model (it needs about 3 GB of space;
+the LoRA adapters together need about 1.3 GB).
 """
 import hashlib
 import json
+import shutil
 import sys
 import zipfile
 from pathlib import Path
 
-ROOT, OUT = Path(sys.argv[1]), Path(sys.argv[2])
+args = [a for a in sys.argv[1:] if not a.startswith("--")]
+NO_DPO = "--no-dpo" in sys.argv
+ROOT, OUT = Path(args[0]), Path(args[1])
+assert (ROOT / "runs").is_dir(), f"{ROOT / 'runs'} not found: is Google Drive mounted, and is this the study's folder?"
+try:
+    free_gb = shutil.disk_usage(OUT.parent if OUT.parent.exists() else ROOT).free / 1e9
+    need_gb = 1.3 + (0 if NO_DPO else 3.2)
+    print(f"free space reported where the files go: {free_gb:.1f} GB (needed: about {need_gb:.1f} GB)")
+    if free_gb < need_gb:
+        print("WARNING: possibly not enough space. Free some space, or run again with --no-dpo.")
+except OSError:
+    pass
 MATH, GEN = "Qwen/Qwen2.5-Math-1.5B-Instruct", "Qwen/Qwen2.5-1.5B-Instruct"
 MODELS = {   # release name: (folder under runs/, base model, description)
     "sft_v2": ("sft_v2/adapter", MATH, "SFT: dual-mode LoRA SFT, think traces <= 1,500 tokens"),
@@ -69,7 +82,9 @@ for name, (folder, base, desc) in MODELS.items():
     print(f"{name}: {z.stat().st_size / 1e6:.0f} MB")
 
 merged = ROOT / "runs" / "dpo_v2" / "merged"
-if (merged / "config.json").exists():
+if NO_DPO:
+    print("dpo_v2: skipped (--no-dpo)")
+elif (merged / "config.json").exists():
     z = OUT / "dpo_v2_merged.zip"
     with zipfile.ZipFile(z, "w", zipfile.ZIP_STORED) as zf:      # safetensors barely compress
         for f in sorted(merged.iterdir()):
